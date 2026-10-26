@@ -14,7 +14,7 @@
     return fetch(CX + '/api/' + kind, {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ path: path, args: args, format: 'json' })
-    }).then(function (r) { return r.json(); }).then(function (j) {
+    }).then(function (r) { return r.json().catch(function () { throw new Error('HTTP ' + r.status); }); }).then(function (j) {
       if (j.status !== 'success') throw new Error(j.errorMessage || 'erro');
       return j.value;
     });

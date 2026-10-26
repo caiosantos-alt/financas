@@ -614,7 +614,7 @@
       if (a.length < 8) { e.textContent = 'Use pelo menos 8 caracteres.'; return; }
       if (a !== b) { e.textContent = 'As senhas não são iguais.'; return; }
       $('#pb').disabled = true; e.textContent = 'Criando…';
-      window.Cloud.setup(a).then(enter, function () { e.textContent = 'Falha ao salvar. Tente de novo.'; $('#pb').disabled = false; });
+      window.Cloud.setup(a).then(enter, function (err) { e.textContent = 'Falha ao salvar: ' + ((err && err.message) || err || 'sem resposta') + (navigator.onLine ? '' : ' (sem internet)'); $('#pb').disabled = false; });
     };
     $('#pb').onclick = go;
     $('#p2').onkeydown = function (ev) { if (ev.key === 'Enter') go(); };
