@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Finanças</title>
+<meta name="theme-color" content="#0f9d6b">
+<meta name="color-scheme" content="light dark">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Finanças">
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" type="image/svg+xml" href="./favicon.svg">
+<link rel="apple-touch-icon" href="./icon-192.png">
+<link rel="stylesheet" href="./style.css?v=3">
+</head>
+<body>
+<div id="lock"><div class="lb"><h2>Finanças</h2><p>Conectando…</p></div></div>
+<div id="app">
+  <header>
+    <h1 id="title">Resumo</h1>
+    <span class="demo" id="demo" hidden title="Dados de exemplo, guardados só neste aparelho">modo teste</span>
+    <button class="sync" id="sync" data-s="info" aria-label="Sincronizar"></button>
+  </header>
+  <main id="main"></main>
+  <nav id="tabs">
+    <button data-tab="resumo" aria-pressed="true"><i>▦</i>Resumo</button>
+    <button data-tab="lanc" aria-pressed="false"><i>☰</i>Lançar</button>
+    <button data-tab="parc" aria-pressed="false"><i>◷</i>Parcelas</button>
+    <button data-tab="dicas" aria-pressed="false"><i>✦</i>Dicas</button>
+    <button data-tab="mais" aria-pressed="false"><i>⋯</i>Mais</button>
+  </nav>
+  <button class="fab" data-act="fab" aria-label="Novo lançamento">+</button>
+</div>
+<div class="shbg" id="shbg"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true"></div>
+<div class="dlg" id="dlg" role="alertdialog" aria-modal="true"></div>
+<div class="toast" id="toast" role="status"></div>
+<script src="./core.js?v=3"></script>
+<script src="./sync.js?v=3"></script>
+<script src="./app.js?v=3"></script>
+</body>
+</html>
